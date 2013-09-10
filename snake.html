@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebGL Snake</title>
+	<style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #outer {
+            position: relative;
+        }
+        canvas {
+            background: #000;
+        }
+        #info {
+            position: absolute;
+            color: #FFF;
+            padding: 10px;
+			font-family: Monospace;
+        }
+        .box {
+            width: 352px;
+            position: absolute;
+            left: 50%;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin-left: -200px;  /* half the width */  
+            color: #FFF;
+            top: 100px;
+            font-family: Monospace;
+            padding: 25px;
+            border: 1px solid #FFF;
+        }
+        .box a:link,
+        .box a:visited,
+        .box a:active {
+            color:#FFF;
+        }
+        .box a:hover {
+            color: #0663fd;
+        }
+        .hidden {
+            display: none;
+        }
+	</style>
+    <script type="text/javascript" src="js/libs/jquery-1.7.1.js"></script>    
+    <script type="text/javascript" src="js/libs/three.js/Three-r49.js"></script>
+    <script type="text/javascript" src="js/libs/three.js/Stats.js"></script>
+    <script type="text/javascript" src="js/libs/three.js/Detector.js"></script>
+    <script type="text/javascript" src="js/Snake-min.js"></script>
+    </head>
+<body>
+    <div id="outer">
+        <div id="intro" class="box hidden">
+            <strong>WebGL Snake</strong><br /><br />
+            Eat the fruits and avoid colliding <br />
+            with self or walls.<br />
+            Controls: WASD or arrows up/down/left/right.<br />
+            <br />
+            Camera: Click and drag to change camera angle.
+            Mousewheel to zoom.<br/>
+            <br /><br />
+            <a href="javascript:;">PLAY!</a> ^__^
+            <br /><br /><br />
+            Made with <a href="https://github.com/mrdoob/three.js/">three.js</a>
+        </div>
+        <div id="info" class="hidden">
+            <span class="level">Level 1</span> - Score: <span class="score">000000000</span> | <span id="debug"></span>
+            <br />
+            <br />
+            Goal: <span id="goal"></span><br /><br />
+        </div>
+        <div id="gameover" class="box hidden">
+            GAME OVER!<br /><br />
+            Final score: <strong><span class="score"></span></strong><br /><br /><br />
+            <a href="javascript:;">Play again?</a>
+        </div>
+        <div id="done" class="box hidden">
+            Woop woop! :D
+        </div>
+        <div id="container"></div>
+    </div>
+</body>
+</html>
