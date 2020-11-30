@@ -1,3 +1,4 @@
 # webgl-snake  
-Playable at   
+WebGL Snake game made with Three.js
+
 https://webgl-snake.surge.sh/
